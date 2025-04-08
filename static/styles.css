@@ -1,0 +1,424 @@
+/* 主体样式 */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    font-family: 'Microsoft YaHei', 'SimHei', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+/* 标题样式 */
+.display-4 {
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+}
+
+.lead {
+    color: #5d6778;
+    font-size: 1.15rem;
+}
+
+/* 卡片样式 */
+.card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    padding: 1.25rem;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* 输入区样式 */
+.form-control {
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e0e6ed;
+    font-size: 1rem;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #4a6cf7;
+    box-shadow: 0 0 0 4px rgba(74, 108, 247, 0.1);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* 按钮样式 */
+.btn {
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4a6cf7, #6a89ff);
+    border: none;
+    box-shadow: 0 5px 10px rgba(74, 108, 247, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #3c5ce4, #5a7dfc);
+    box-shadow: 0 7px 14px rgba(74, 108, 247, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(74, 108, 247, 0.2);
+}
+
+.btn-light {
+    background: linear-gradient(45deg, #f5f7fa, #e4e8f0);
+    color: #4a6cf7;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-light:hover {
+    background: linear-gradient(45deg, #e4e8f0, #d4d8e0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* 大纲容器样式 */
+.outline-container {
+    min-height: 300px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+}
+
+.outline-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.outline-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.outline-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.outline-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* 大纲编辑器样式 */
+.outline-editor-container {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#outlineEditor {
+    flex-grow: 1;
+    resize: none;
+    min-height: 350px;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    background-color: #f8fafc;
+    font-size: 0.95rem;
+}
+
+#outlineEditor:focus {
+    border-color: #4a6cf7;
+    box-shadow: 0 0 0 4px rgba(74, 108, 247, 0.1);
+}
+
+/* 全文容器样式 */
+.fulltext-container {
+    min-height: 300px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+}
+
+.fulltext-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.fulltext-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.fulltext-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.fulltext-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* 按钮组样式 */
+.btn-group-sm .btn {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.btn-outline-primary {
+    color: #4a6cf7;
+    border-color: #4a6cf7;
+}
+
+.btn-outline-primary:hover, 
+.btn-outline-primary.active {
+    background-color: #4a6cf7;
+    border-color: #4a6cf7;
+    color: white;
+}
+
+/* 进度条样式 */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, #4a6cf7, #6a89ff);
+    border-radius: 10px;
+}
+
+/* 大纲样式 */
+.outline-title {
+    font-weight: 700;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #4a6cf7;
+    padding-bottom: 0.5rem;
+}
+
+.outline-section {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #3d4852;
+    font-size: 1.2rem;
+}
+
+.outline-subsection {
+    margin-left: 3rem;
+    margin-top: 0.75rem;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* 全文样式 */
+.fulltext-title {
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4a6cf7;
+}
+
+.fulltext-chapter {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.fulltext-section {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #3d4852;
+    font-size: 1.2rem;
+}
+
+.fulltext-paragraph {
+    margin-top: 0.75rem;
+    text-indent: 2em;
+    line-height: 1.8;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+/* 头部渐变背景 */
+.bg-primary {
+    background: linear-gradient(45deg, #4a6cf7, #6a89ff) !important;
+}
+
+.bg-success {
+    background: linear-gradient(45deg, #10b981, #34d399) !important;
+}
+
+.bg-warning {
+    background: linear-gradient(45deg, #f59e0b, #fbbf24) !important;
+}
+
+.bg-info {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa) !important;
+}
+
+.bg-danger {
+    background: linear-gradient(45deg, #ef4444, #f87171) !important;
+}
+
+/* 提示框样式 */
+.toast {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: none;
+}
+
+.toast-header {
+    border-bottom: none;
+}
+
+/* 增加响应式设计 */
+@media (max-width: 767px) {
+    .card {
+        margin-bottom: 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .outline-container,
+    .fulltext-container {
+        max-height: 300px;
+    }
+}
+
+/* 主容器样式 */
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+/* 加载状态样式 */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+}
+
+/* 品牌徽标样式 */
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4a6cf7;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.brand-logo i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+/* 按钮脉冲动画 */
+@keyframes btnPulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 108, 247, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 108, 247, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 108, 247, 0); }
+}
+
+.btn-pulse {
+    animation: btnPulse 1s;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 编辑模式指示器 */
+.edit-mode-indicator {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(249, 115, 22, 0.9);
+    color: white;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-mode-indicator i {
+    margin-right: 0.5rem;
+} 

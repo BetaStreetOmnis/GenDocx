@@ -1,0 +1,7 @@
+fastapi==0.103.1
+uvicorn==0.23.2
+requests==2.31.0
+python-docx==0.8.11
+python-multipart==0.0.6
+python-dotenv==1.0.0 
+Jinja2==3.1.6
