@@ -31,9 +31,9 @@ Path("static").mkdir(exist_ok=True)
 Path("downloads").mkdir(exist_ok=True)
 
 # 大模型API配置
-MODEL_API_URL = "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
+MODEL_API_URL = os.getenv("MODEL_API_URL", "")
 MODEL_API_KEY = os.getenv("MODEL_API_KEY", "")  # 默认使用演示密钥，建议在生产环境中使用环境变量
-
+MODEL_NAME = os.getenv("MODEL_NAME", "")
 # 存储进行中的文档生成任务
 active_generations = {}
 
@@ -129,7 +129,7 @@ async def generate_outline(topic: str = Form(), key_points: str = Form(None)):
         prompt += f"\n\n请务必确保大纲围绕以下关键点展开：\n{key_points}\n\n这些要点必须体现在大纲的相应章节中。"
     
     data = {
-        "model": "deepseek-r1-250120",
+        "model": MODEL_NAME,
         "messages": [
             {"role": "system", "content": "你是一个专业的大纲生成助手，擅长创建结构化、有逻辑性的大纲。"},
             {"role": "user", "content": prompt}
@@ -176,7 +176,7 @@ async def generate_fulltext_section(outline_section: str = Form(), context: str 
         prompt += f"\n已有内容作为参考上下文:\n{context}\n\n请确保生成的内容与上下文保持一致性和连贯性。"
     
     data = {
-        "model": "deepseek-r1-250120",
+        "model": MODEL_NAME,
         "messages": [
             {"role": "system", "content": "你是一位专业的内容撰写专家，擅长将大纲扩展为详细的文章内容。生成的内容应该结构清晰、论述充分、内容翔实。"},
             {"role": "user", "content": prompt}
@@ -310,7 +310,7 @@ async def process_next_section(task_id: str = Form()):
             prompt += f"已有内容作为上下文参考:\n{last_part}\n\n请确保新内容与已有内容保持连贯性。"
         
         data = {
-            "model": "deepseek-r1-250120",
+            "model": MODEL_NAME,
             "messages": [
                 {"role": "system", "content": "你是一位专业的内容撰写专家，擅长将大纲扩展为详细的文章内容。生成的内容应该结构清晰、论述充分、内容翔实。你会确保内容紧扣主题要点，不偏离核心内容。"},
                 {"role": "user", "content": prompt}
